@@ -15,6 +15,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import * as fromAuth from './auth/auth.reducer';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AppEffects } from './app.effects';
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
+    StoreModule.forFeature('auth', fromAuth.reducer),
   ],
   providers: [],
   bootstrap: [AppComponent]
