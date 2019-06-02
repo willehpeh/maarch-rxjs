@@ -5,6 +5,7 @@ import { CompanyViewComponent } from './company-view/company-view.component';
 import { CompaniesRoutingModule } from './companies-routing.module';
 import { MaterialModule } from '../shared/material.module';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CompaniesListComponent, CompanyViewComponent],
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     CompaniesRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class CompaniesModule { }

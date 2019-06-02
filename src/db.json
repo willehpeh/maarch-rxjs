@@ -1,0 +1,406 @@
+{
+  "companies": [
+    {
+      "companyName": "Spencer - Hackett",
+      "companyType": "For Profit",
+      "buzz": "leverage networks",
+      "employees": [
+        "a0da5b13-b546-40af-bf63-9b4a236c3bfb",
+        "f93e49d2-7c9f-447f-8abf-8d3b6073f7df",
+        "0370417d-4963-4e09-a571-757a0a310864",
+        "59257bc2-57cd-424e-99d4-ca6c128c4afb",
+        "9d1410d6-6ca1-43dd-82ea-f811ec1fb5f3"
+      ],
+      "address": {
+        "street": "682 Irwin Shoal",
+        "city": "Casperchester",
+        "state": "Virginia",
+        "zip": "46314-4003"
+      },
+      "phone": "(928) 551-8553 x938",
+      "id": "c671103c-9e6c-4c28-b220-512ba3176e5e"
+    },
+    {
+      "id": "5e83124c-1a60-475f-a0f1-580862848f61",
+      "companyName": "Eichmann, Kemmer and Herzog",
+      "companyType": "For Profit",
+      "buzz": "harness partnerships",
+      "employees": [
+        "4efcbfb6-30c0-4d91-8a14-f1ff50b54ee8",
+        "66f578be-12e4-412f-8344-46e43c04fc39",
+        "5820f91e-e9ac-45c6-bdc9-653285ce75d2",
+        "5221744b-457f-4f81-86a3-f493cc5253f5",
+        "6b6b008a-4875-4b31-81bc-683f77880e19"
+      ],
+      "address": {
+        "street": "87776 Amani Shoals",
+        "city": "Coltton",
+        "state": "Ohio",
+        "zip": "09675"
+      },
+      "phone": "348.263.5515 x8105"
+    },
+    {
+      "id": "b8b4b17d-e478-4c09-8ef3-0f624db172ed",
+      "companyName": "Berge LLC",
+      "companyType": "For Profit",
+      "buzz": "redefine portals",
+      "employees": [
+        "10642862-e84e-4109-80b4-16ac162ac7b6",
+        "2cd3548e-bd5a-4ee0-a86c-70f8f3079085",
+        "94ade54e-cee8-48c5-8a0e-7a2af098366e",
+        "c7360b8a-b72b-4f7c-87b1-c9e90e42b10c",
+        "618c8746-656a-4fc7-b5d6-842335be0d59"
+      ],
+      "address": {
+        "street": "65914 Kub Ways",
+        "city": "East Kenchester",
+        "state": "Maryland",
+        "zip": "79989-0114"
+      },
+      "phone": "830-383-8710"
+    },
+    {
+      "id": "852b94fa-45e0-4686-9f03-2738a1f8de58",
+      "companyName": "Medhurst and Sons",
+      "companyType": "For Profit",
+      "buzz": "exploit synergies",
+      "employees": [
+        "3665eb62-c79d-4ed1-b248-497ac2a8ebc9",
+        "f92201d9-3fce-433f-b050-2232bdb7a644",
+        "dec0e50e-347a-40b6-885c-d37d2eff2742",
+        "3759ebc2-bc5d-48b1-b56d-b9549705af96",
+        "1a748ea2-8279-4be0-b6fc-bd5e327f5163"
+      ],
+      "address": {
+        "street": "45525 Ryann Via",
+        "city": "Lake Tannerville",
+        "state": "Wyoming",
+        "zip": "03336"
+      },
+      "phone": "489.987.3786"
+    },
+    {
+      "id": "102c75a7-4711-468a-bc11-e74611bd440a",
+      "companyName": "Frami, Kunze and Kassulke",
+      "companyType": "Non-profit",
+      "buzz": "embrace solutions",
+      "employees": [
+        "dc2f0820-e455-4b42-8167-11ca06995093",
+        "594d4890-5b7e-40bf-9f1e-21a0938b4709",
+        "9bd0ff6f-ac26-46bc-88b6-718b366da24a",
+        "613bada9-2519-461f-bb9f-82893bf514c8",
+        "808157df-bba5-4a4b-a5e3-09189b0c7f4f"
+      ],
+      "address": {
+        "street": "38922 Lyric Land",
+        "city": "East Martina",
+        "state": "South Dakota",
+        "zip": "32075-1501"
+      },
+      "phone": "640.501.0129 x79880"
+    },
+    {
+      "id": "4e4e68f8-a10c-4a4a-95ba-603ac58791c8",
+      "companyName": "Schinner, Ortiz and Emmerich",
+      "companyType": "Non-profit",
+      "buzz": "embrace bandwidth",
+      "employees": [
+        "eb0f963d-7d3f-41a5-8181-e1324857f845",
+        "4813cc5b-4c36-4fed-a7ec-c34aa6b9bab8",
+        "159d926e-694e-4066-9e46-6eb167a31cd0",
+        "c203c733-483b-46f8-8fec-1b4aac620d86",
+        "d6ecb161-9bce-47fc-a020-ce0c625701c1"
+      ],
+      "address": {
+        "street": "19705 Davis Lake",
+        "city": "Mozelleview",
+        "state": "Oregon",
+        "zip": "00494-3931"
+      },
+      "phone": "1-024-806-1421"
+    },
+    {
+      "id": "64c26075-6f81-400b-a50e-26c618dd64ee",
+      "companyName": "Lebsack LLC",
+      "companyType": "Non-profit",
+      "buzz": "visualize eyeballs",
+      "employees": [
+        "778e9003-7baf-44ea-9c2f-12ae477385f3",
+        "79917690-424c-4ce3-9dd7-d5523e7fa9a9",
+        "d38f14e2-78b3-414d-89f5-138b4b37aee5",
+        "76ce8701-21ff-480b-868b-b75fc7c32b10",
+        "fc8aa3ff-8ea9-477c-b45c-84e4f8369ce5"
+      ],
+      "address": {
+        "street": "35634 Felix Roads",
+        "city": "Davidberg",
+        "state": "Massachusetts",
+        "zip": "83394-1478"
+      },
+      "phone": "587-302-9948 x6332"
+    },
+    {
+      "id": "e85c7579-a9f6-4d27-852e-8143ab37c13a",
+      "companyName": "Jones - Kiehn",
+      "companyType": "Non-profit",
+      "buzz": "generate vortals",
+      "employees": [
+        "d10e6077-c897-4aae-a286-3522a9e5d836",
+        "eb556031-2deb-4f78-95d5-e468ec42e0c4",
+        "5cb3b849-fdeb-4e76-9740-26dffe692518",
+        "d9cc96b3-3f5c-4be1-9e77-059a587f4f01",
+        "6350abaa-9493-4878-8db8-553a5f9a26eb"
+      ],
+      "address": {
+        "street": "957 Bartholome View",
+        "city": "Quentinville",
+        "state": "Kentucky",
+        "zip": "83281"
+      },
+      "phone": "405.049.9441"
+    }
+  ],
+  "employees": [
+    {
+      "id": "a0da5b13-b546-40af-bf63-9b4a236c3bfb",
+      "firstName": "Alycia",
+      "lastName": "Mohr",
+      "email": "Simone56@hotmail.com"
+    },
+    {
+      "id": "f93e49d2-7c9f-447f-8abf-8d3b6073f7df",
+      "firstName": "Curtis",
+      "lastName": "Ernser",
+      "email": "Rodrick.Zieme25@gmail.com"
+    },
+    {
+      "id": "0370417d-4963-4e09-a571-757a0a310864",
+      "firstName": "Chet",
+      "lastName": "Effertz",
+      "email": "Bertha.Bogan@yahoo.com"
+    },
+    {
+      "id": "59257bc2-57cd-424e-99d4-ca6c128c4afb",
+      "firstName": "Julianne",
+      "lastName": "Schneider",
+      "email": "Sherman55@hotmail.com"
+    },
+    {
+      "id": "9d1410d6-6ca1-43dd-82ea-f811ec1fb5f3",
+      "firstName": "Augusta",
+      "lastName": "Russel",
+      "email": "Edwin84@yahoo.com"
+    },
+    {
+      "id": "4efcbfb6-30c0-4d91-8a14-f1ff50b54ee8",
+      "firstName": "Ricky",
+      "lastName": "Welch",
+      "email": "Juliet_Rice17@gmail.com"
+    },
+    {
+      "id": "66f578be-12e4-412f-8344-46e43c04fc39",
+      "firstName": "Hellen",
+      "lastName": "Bruen",
+      "email": "Chase_Okuneva92@gmail.com"
+    },
+    {
+      "id": "5820f91e-e9ac-45c6-bdc9-653285ce75d2",
+      "firstName": "Tommie",
+      "lastName": "Hartmann",
+      "email": "Etha.Brown@hotmail.com"
+    },
+    {
+      "id": "5221744b-457f-4f81-86a3-f493cc5253f5",
+      "firstName": "Enola",
+      "lastName": "Metz",
+      "email": "Luis67@yahoo.com"
+    },
+    {
+      "id": "6b6b008a-4875-4b31-81bc-683f77880e19",
+      "firstName": "Martin",
+      "lastName": "Smith",
+      "email": "Tobin.Romaguera@yahoo.com"
+    },
+    {
+      "id": "10642862-e84e-4109-80b4-16ac162ac7b6",
+      "firstName": "Nathen",
+      "lastName": "Parker",
+      "email": "Janick85@yahoo.com"
+    },
+    {
+      "id": "2cd3548e-bd5a-4ee0-a86c-70f8f3079085",
+      "firstName": "Eddie",
+      "lastName": "Watsica",
+      "email": "Manuela.Yost3@gmail.com"
+    },
+    {
+      "id": "94ade54e-cee8-48c5-8a0e-7a2af098366e",
+      "firstName": "Isaias",
+      "lastName": "Ebert",
+      "email": "Frederic_Klocko56@hotmail.com"
+    },
+    {
+      "id": "c7360b8a-b72b-4f7c-87b1-c9e90e42b10c",
+      "firstName": "Virginia",
+      "lastName": "Cummings",
+      "email": "Tyrell_Jacobs18@gmail.com"
+    },
+    {
+      "id": "618c8746-656a-4fc7-b5d6-842335be0d59",
+      "firstName": "Estevan",
+      "lastName": "Hammes",
+      "email": "Barbara28@gmail.com"
+    },
+    {
+      "id": "3665eb62-c79d-4ed1-b248-497ac2a8ebc9",
+      "firstName": "Liza",
+      "lastName": "Pollich",
+      "email": "Marjolaine_Wunsch84@yahoo.com"
+    },
+    {
+      "id": "f92201d9-3fce-433f-b050-2232bdb7a644",
+      "firstName": "Anderson",
+      "lastName": "Johns",
+      "email": "Brielle.Runolfsdottir28@yahoo.com"
+    },
+    {
+      "id": "dec0e50e-347a-40b6-885c-d37d2eff2742",
+      "firstName": "Gregorio",
+      "lastName": "Morissette",
+      "email": "Elfrieda74@yahoo.com"
+    },
+    {
+      "id": "3759ebc2-bc5d-48b1-b56d-b9549705af96",
+      "firstName": "Reba",
+      "lastName": "Boyle",
+      "email": "Deonte35@gmail.com"
+    },
+    {
+      "id": "1a748ea2-8279-4be0-b6fc-bd5e327f5163",
+      "firstName": "Jeramy",
+      "lastName": "Champlin",
+      "email": "Mason.Dicki@yahoo.com"
+    },
+    {
+      "id": "dc2f0820-e455-4b42-8167-11ca06995093",
+      "firstName": "Nikolas",
+      "lastName": "Muller",
+      "email": "Buford_Luettgen@yahoo.com"
+    },
+    {
+      "id": "594d4890-5b7e-40bf-9f1e-21a0938b4709",
+      "firstName": "Orrin",
+      "lastName": "Rath",
+      "email": "Ali.Huels48@yahoo.com"
+    },
+    {
+      "id": "9bd0ff6f-ac26-46bc-88b6-718b366da24a",
+      "firstName": "Madge",
+      "lastName": "Yundt",
+      "email": "Zachery.Schmitt69@yahoo.com"
+    },
+    {
+      "id": "613bada9-2519-461f-bb9f-82893bf514c8",
+      "firstName": "Lavina",
+      "lastName": "Kertzmann",
+      "email": "Braeden_Kuphal83@yahoo.com"
+    },
+    {
+      "id": "808157df-bba5-4a4b-a5e3-09189b0c7f4f",
+      "firstName": "Mireya",
+      "lastName": "Kuhlman",
+      "email": "Brody_Gottlieb6@gmail.com"
+    },
+    {
+      "id": "eb0f963d-7d3f-41a5-8181-e1324857f845",
+      "firstName": "Estel",
+      "lastName": "Hudson",
+      "email": "Javon_Nienow25@gmail.com"
+    },
+    {
+      "id": "4813cc5b-4c36-4fed-a7ec-c34aa6b9bab8",
+      "firstName": "Esmeralda",
+      "lastName": "Huel",
+      "email": "Dominique_Dickens@gmail.com"
+    },
+    {
+      "id": "159d926e-694e-4066-9e46-6eb167a31cd0",
+      "firstName": "Tony",
+      "lastName": "Kohler",
+      "email": "Antwon_Strosin@yahoo.com"
+    },
+    {
+      "id": "c203c733-483b-46f8-8fec-1b4aac620d86",
+      "firstName": "Aurore",
+      "lastName": "Wolff",
+      "email": "Thurman.Grant27@yahoo.com"
+    },
+    {
+      "id": "d6ecb161-9bce-47fc-a020-ce0c625701c1",
+      "firstName": "Brad",
+      "lastName": "Klocko",
+      "email": "Shania_Zemlak@yahoo.com"
+    },
+    {
+      "id": "778e9003-7baf-44ea-9c2f-12ae477385f3",
+      "firstName": "Ivah",
+      "lastName": "Mosciski",
+      "email": "Noah.Mraz37@gmail.com"
+    },
+    {
+      "id": "79917690-424c-4ce3-9dd7-d5523e7fa9a9",
+      "firstName": "Beth",
+      "lastName": "Hermiston",
+      "email": "Lonzo.Wisozk12@yahoo.com"
+    },
+    {
+      "id": "d38f14e2-78b3-414d-89f5-138b4b37aee5",
+      "firstName": "Giovanny",
+      "lastName": "Von",
+      "email": "Diana_Adams@yahoo.com"
+    },
+    {
+      "id": "76ce8701-21ff-480b-868b-b75fc7c32b10",
+      "firstName": "Kacie",
+      "lastName": "Hegmann",
+      "email": "Jorge.Weimann95@gmail.com"
+    },
+    {
+      "id": "fc8aa3ff-8ea9-477c-b45c-84e4f8369ce5",
+      "firstName": "Winfield",
+      "lastName": "Wilkinson",
+      "email": "Adell.Rosenbaum0@yahoo.com"
+    },
+    {
+      "id": "d10e6077-c897-4aae-a286-3522a9e5d836",
+      "firstName": "Vada",
+      "lastName": "Hills",
+      "email": "Camille3@hotmail.com"
+    },
+    {
+      "id": "eb556031-2deb-4f78-95d5-e468ec42e0c4",
+      "firstName": "Delphia",
+      "lastName": "Boyer",
+      "email": "Brannon.Wiza94@yahoo.com"
+    },
+    {
+      "id": "5cb3b849-fdeb-4e76-9740-26dffe692518",
+      "firstName": "Rhett",
+      "lastName": "Lebsack",
+      "email": "Henderson.Trantow@hotmail.com"
+    },
+    {
+      "id": "d9cc96b3-3f5c-4be1-9e77-059a587f4f01",
+      "firstName": "Elfrieda",
+      "lastName": "Deckow",
+      "email": "Frankie79@yahoo.com"
+    },
+    {
+      "id": "6350abaa-9493-4878-8db8-553a5f9a26eb",
+      "firstName": "Hilda",
+      "lastName": "Collier",
+      "email": "Brady.Kunde@hotmail.com"
+    }
+  ]
+}

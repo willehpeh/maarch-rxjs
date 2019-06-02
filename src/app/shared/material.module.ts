@@ -4,7 +4,7 @@ import {
   MatCardModule, MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatSelectModule,
   MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
@@ -18,7 +18,8 @@ import {
     MatInputModule,
     MatIconModule,
     MatTabsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule {}
