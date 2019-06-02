@@ -1,8 +1,8 @@
 var faker = require('faker');
 
 function generateData() {
-  var numberOfCompanies = 8;
-  var employeesPerCompany = 5;
+  var numberOfCompanies = 20;
+  var employeesPerCompany = 10;
   var companies = [];
   var employees = [];
   for (var i = 0; i < numberOfCompanies; i++) {
