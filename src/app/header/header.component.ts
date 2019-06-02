@@ -31,7 +31,6 @@ export class HeaderComponent implements OnInit {
     this.auth.login().pipe(
       tap((userId) => {
         this.store.dispatch(new Login(userId));
-        this.router.navigateByUrl('companies');
       })
     ).subscribe(
       noop,
@@ -43,7 +42,6 @@ export class HeaderComponent implements OnInit {
     this.auth.logout().pipe(
       tap(() => {
         this.store.dispatch(new Logout());
-        this.router.navigateByUrl('');
       })
     ).subscribe(
       noop,
