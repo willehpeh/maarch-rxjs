@@ -4,7 +4,8 @@ import { CompaniesService } from '../companies.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Company } from '../models/Company';
-import { map, tap } from 'rxjs/operators';
+import { concatMap, debounceTime, distinctUntilChanged, exhaustMap, map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-company-view',
@@ -15,6 +16,7 @@ export class CompanyViewComponent implements OnInit {
 
   companyForm: FormGroup;
   company: Company;
+  submitClick$ = new Subject<boolean>();
 
   constructor(private formBuilder: FormBuilder,
               private companies: CompaniesService,
@@ -32,22 +34,29 @@ export class CompanyViewComponent implements OnInit {
     });
 
     this.companyForm.valueChanges.pipe(
-      map(form => ({ ...this.company, ...form }) ))
-      .subscribe(company => {
-        this.companies.updateCompany(company).subscribe();
-      });
-  }
+      debounceTime(300),
+      distinctUntilChanged(
+        (prev, curr) => {
+          return prev.companyName === curr.companyName
+            && prev.companyType === curr.companyType
+            && prev.buzz === curr.buzz;
+        }
+      ),
+      map(form => ({ ...this.company, ...form }) ),
+      concatMap(company => this.companies.updateCompany(company))
+    ).subscribe();
 
-  onSubmit() {
-    this.companies.updateCompany({
-      ...this.company,
-      companyName: this.companyForm.get('companyName').value,
-      companyType: this.companyForm.get('companyType').value,
-      buzz: this.companyForm.get('buzz').value
-    }).subscribe(
+    this.submitClick$.pipe(
+      map(() => ({  ...this.company, ...this.companyForm.value })),
+      exhaustMap(company => this.companies.updateCompany(company))
+    ).subscribe(
       () => this.router.navigateByUrl('companies'),
       err => console.log(err)
     );
+  }
+
+  onSubmit() {
+    this.submitClick$.next(true);
   }
 
   onGoBack() {
