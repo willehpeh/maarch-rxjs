@@ -16,7 +16,15 @@ function generateData() {
       id: faker.random.uuid(),
       companyName: faker.company.companyName(),
       companyType: companyType,
-      employees: []
+      buzz: faker.company.bsBuzz() + ' ' + faker.company.bsNoun(),
+      employees: [],
+      address: {
+        street: faker.address.streetAddress(),
+        city: faker.address.city(),
+        state: faker.address.state(),
+        zip: faker.address.zipCode()
+      },
+      phone: faker.phone.phoneNumber()
     });
   }
   for (var j = 0; j < numberOfCompanies; j++) {
