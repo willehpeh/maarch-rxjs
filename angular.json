@@ -138,5 +138,8 @@
       }
     }
   },
-  "defaultProject": "maarch-rxjs"
+  "defaultProject": "maarch-rxjs",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
