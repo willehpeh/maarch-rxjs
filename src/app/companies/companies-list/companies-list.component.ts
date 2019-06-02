@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Company } from '../models/Company';
 import { Observable } from 'rxjs';
 import { CompaniesService } from '../companies.service';
-import { map, shareReplay } from 'rxjs/operators';
+import { map, mergeMap, shareReplay } from 'rxjs/operators';
 import { LoadingService } from '../../services/loading.service';
+import { PeopleService } from '../../people/people.service';
+import { Person } from '../../people/models/Person';
 
 @Component({
   selector: 'app-companies-list',
@@ -18,7 +20,8 @@ export class CompaniesListComponent implements OnInit {
   loading$: Observable<boolean>;
 
   constructor(private companies: CompaniesService,
-              private loading: LoadingService) { }
+              private loading: LoadingService,
+              private people: PeopleService) { }
 
   ngOnInit() {
     this.loading$ = this.loading.getLoading();
@@ -33,5 +36,4 @@ export class CompaniesListComponent implements OnInit {
       map(companies => companies.filter(company => company.companyType === 'Non-profit'))
     );
   }
-
 }

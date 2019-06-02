@@ -24,3 +24,11 @@
     <button mat-flat-button (click)="onSubmit()" color="primary">SAVE</button>
   </mat-card-actions>
 </mat-card>
+<mat-card>
+  <mat-card-title>
+    Employees
+  </mat-card-title>
+  <mat-card-content>
+    <p *ngFor="let employee of (employees$ | async)">{{ employee.firstName }} {{ employee.lastName }} - {{ employee.email }}</p>
+  </mat-card-content>
+</mat-card>

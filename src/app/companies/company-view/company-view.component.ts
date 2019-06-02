@@ -4,8 +4,10 @@ import { CompaniesService } from '../companies.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Company } from '../models/Company';
-import { concatMap, debounceTime, distinctUntilChanged, exhaustMap, map } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { combineAll, concatMap, debounceTime, distinctUntilChanged, exhaustMap, map, mergeMap, scan } from 'rxjs/operators';
+import { from, merge, Observable, of, Subject } from 'rxjs';
+import { Person } from '../../people/models/Person';
+import { PeopleService } from '../../people/people.service';
 
 @Component({
   selector: 'app-company-view',
@@ -18,11 +20,14 @@ export class CompanyViewComponent implements OnInit {
   company: Company;
   submitClick$ = new Subject<boolean>();
 
+  employees$: Observable<Person[]>;
+
   constructor(private formBuilder: FormBuilder,
               private companies: CompaniesService,
               private router: Router,
               private location: Location,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private people: PeopleService) { }
 
   ngOnInit() {
     this.company = this.route.snapshot.data.company;
@@ -53,6 +58,12 @@ export class CompanyViewComponent implements OnInit {
       () => this.router.navigateByUrl('companies'),
       err => console.log(err)
     );
+
+    this.employees$ = from(this.company.employees).pipe(
+      mergeMap(employee => this.people.getPersonById(employee)),
+      scan((acc, value) => [...acc, value], [])
+    );
+
   }
 
   onSubmit() {
