@@ -33,4 +33,8 @@ export class CompaniesService {
       })
     });
   }
+
+  searchCompany(search: string) {
+    return this.http.get<Company[]>(`http://localhost:3000/companies?companyName_like=${search}`);
+  }
 }

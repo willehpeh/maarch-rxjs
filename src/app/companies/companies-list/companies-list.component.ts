@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from '../models/Company';
-import { Observable } from 'rxjs';
+import { concat, Observable } from 'rxjs';
 import { CompaniesService } from '../companies.service';
-import { map, mergeMap, shareReplay } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LoadingService } from '../../services/loading.service';
-import { PeopleService } from '../../people/people.service';
-import { Person } from '../../people/models/Person';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-companies-list',
@@ -19,20 +18,35 @@ export class CompaniesListComponent implements OnInit {
 
   loading$: Observable<boolean>;
 
+  searchForm: FormGroup;
+
   constructor(private companies: CompaniesService,
               private loading: LoadingService,
-              private people: PeopleService) { }
+              private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.searchForm = this.formBuilder.group({
+      search: ''
+    });
+
     this.loading$ = this.loading.getLoading();
+
     const companies$ = this.companies.getAllCompanies().pipe(
       shareReplay()
     );
 
-    this.forProfit$ = companies$.pipe(
+    const searchCompanies$ = this.searchForm.valueChanges.pipe(
+      shareReplay(),
+      debounceTime(300),
+      map(form => form.search),
+      distinctUntilChanged(),
+      switchMap(searchString => this.companies.searchCompany(searchString))
+    );
+
+    this.forProfit$ = concat(companies$, searchCompanies$).pipe(
       map(companies => companies.filter(company => company.companyType === 'For Profit'))
     );
-    this.nonProfit$ = companies$.pipe(
+    this.nonProfit$ = concat(companies$, searchCompanies$).pipe(
       map(companies => companies.filter(company => company.companyType === 'Non-profit'))
     );
   }
