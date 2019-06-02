@@ -11,8 +11,6 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class CompaniesListComponent implements OnInit {
 
-  companies$: Observable<Company[]>;
-
   forProfit$: Observable<Company[]>;
   nonProfit$: Observable<Company[]>;
 
@@ -20,12 +18,12 @@ export class CompaniesListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.companies$ = this.companies.getAllCompanies();
+    const companies$ = this.companies.getAllCompanies();
 
-    this.forProfit$ = this.companies$.pipe(
+    this.forProfit$ = companies$.pipe(
       map(companies => companies.filter(company => company.companyType === 'For Profit'))
     );
-    this.nonProfit$ = this.companies$.pipe(
+    this.nonProfit$ = companies$.pipe(
       map(companies => companies.filter(company => company.companyType === 'Non-profit'))
     );
   }
