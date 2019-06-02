@@ -20,9 +20,7 @@ export class CompaniesListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.companies$ = this.companies.getAllCompanies().pipe(
-      shareReplay()
-    );
+    this.companies$ = this.companies.getAllCompanies();
 
     this.forProfit$ = this.companies$.pipe(
       map(companies => companies.filter(company => company.companyType === 'For Profit'))
