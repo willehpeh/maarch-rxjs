@@ -1,8 +1,8 @@
 <mat-toolbar class="mat-elevation-z2">
   <p>Learn Reactive Programming</p>
   <div class="login-links">
-    <button mat-button (click)="onLogin()">LOGIN</button>
-    <button mat-button (click)="onLogout()">LOGOUT</button>
+    <button mat-button (click)="onLogin()" *ngIf="isLoggedOut$ | async">LOGIN</button>
+    <button mat-button (click)="onLogout()" *ngIf="isLoggedIn$ | async">LOGOUT</button>
   </div>
   <div class="header-links">
     <button mat-icon-button routerLink="">

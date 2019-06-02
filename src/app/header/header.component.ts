@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { noop } from 'rxjs';
+import { noop, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../reducers';
 import { Login, Logout } from './auth.actions';
+import { isLoggedIn, isLoggedOut } from '../auth/auth.selectors';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +15,16 @@ import { Login, Logout } from './auth.actions';
 })
 export class HeaderComponent implements OnInit {
 
+  isLoggedIn$: Observable<boolean>;
+  isLoggedOut$: Observable<boolean>;
+
   constructor(private auth: AuthService,
               private router: Router,
               private store: Store<AppState>) { }
 
   ngOnInit() {
+    this.isLoggedIn$ = this.store.select(isLoggedIn);
+    this.isLoggedOut$ = this.store.select(isLoggedOut);
   }
 
   onLogin() {
