@@ -30,6 +30,15 @@
               <mat-panel-title>{{ company.companyName }}</mat-panel-title>
               <mat-panel-description>{{ company.buzz | capitalize }}</mat-panel-description>
             </mat-expansion-panel-header>
+            <div class="flex">
+              <span>Address</span>
+              <div class="address">
+                <span>{{ company.address.street }}</span>
+                <span>{{ company.address.city }}</span>
+                <span>{{ company.address.state }}</span>
+                <span>{{ company.address.zip }}</span>
+              </div>
+            </div>
           </mat-expansion-panel>
         </mat-accordion>
       </mat-tab>
