@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Company } from '../models/Company';
 import { Observable } from 'rxjs';
 import { CompaniesService } from '../companies.service';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { LoadingService } from '../../services/loading.service';
 
 @Component({
@@ -22,7 +22,9 @@ export class CompaniesListComponent implements OnInit {
 
   ngOnInit() {
     this.loading$ = this.loading.getLoading();
-    const companies$ = this.companies.getAllCompanies();
+    const companies$ = this.companies.getAllCompanies().pipe(
+      shareReplay()
+    );
 
     this.forProfit$ = companies$.pipe(
       map(companies => companies.filter(company => company.companyType === 'For Profit'))
