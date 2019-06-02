@@ -1,20 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Company } from './models/Company';
+import { LoadingService } from '../services/loading.service';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompaniesService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+              private loading: LoadingService) {}
 
   getAllCompanies() {
-    return this.http.get<Company[]>('http://localhost:3000/companies');
+    this.loading.setLoading(true);
+    return this.http.get<Company[]>('http://localhost:3000/companies').pipe(
+      tap(() => this.loading.setLoading(false))
+    );
   }
 
   getCompanyById(id: string) {
-    return this.http.get<Company>(`http://localhost:3000/companies/${id}`);
+    this.loading.setLoading(true);
+    return this.http.get<Company>(`http://localhost:3000/companies/${id}`).pipe(
+      tap(() => this.loading.setLoading(false))
+    );;
   }
 
   updateCompany(company: Company) {

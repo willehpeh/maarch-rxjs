@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Company } from '../models/Company';
 import { Observable } from 'rxjs';
 import { CompaniesService } from '../companies.service';
-import { map, shareReplay } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { LoadingService } from '../../services/loading.service';
 
 @Component({
   selector: 'app-companies-list',
@@ -14,10 +15,13 @@ export class CompaniesListComponent implements OnInit {
   forProfit$: Observable<Company[]>;
   nonProfit$: Observable<Company[]>;
 
-  constructor(private companies: CompaniesService) { }
+  loading$: Observable<boolean>;
+
+  constructor(private companies: CompaniesService,
+              private loading: LoadingService) { }
 
   ngOnInit() {
-
+    this.loading$ = this.loading.getLoading();
     const companies$ = this.companies.getAllCompanies();
 
     this.forProfit$ = companies$.pipe(
