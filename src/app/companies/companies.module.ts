@@ -6,6 +6,8 @@ import { CompaniesRoutingModule } from './companies-routing.module';
 import { MaterialModule } from '../shared/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import * as fromCompanies from './companies.reducer';
 
 @NgModule({
   declarations: [CompaniesListComponent, CompanyViewComponent],
@@ -14,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CompaniesRoutingModule,
     MaterialModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forFeature('companies', fromCompanies.reducer)
   ]
 })
 export class CompaniesModule { }
