@@ -4,7 +4,10 @@ import { Company } from './models/Company';
 export enum CompaniesActionTypes {
   CompanyRequested = '[Company Resolver] Company Requested',
   CompanyLoaded = '[Companies API] Company Loaded',
-  CompanyLoadFailed = '[Company Resolver] Company Load Failed'
+  CompanyLoadFailed = '[Companies API] Company Load Failed',
+  AllCompaniesRequested = '[Companies List View] All Companies Requested',
+  AllCompaniesLoaded = '[Companies API] All Companies Loaded',
+  AllCompaniesLoadFailed = '[Companies API] All Companies Load Failed'
 }
 
 export class CompanyRequested implements Action {
@@ -19,10 +22,25 @@ export class CompanyLoaded implements Action {
 
 export class CompanyLoadFailed implements Action {
   readonly type = CompaniesActionTypes.CompanyLoadFailed;
-  constructor() {}
+}
+
+export class AllCompaniesRequested implements Action {
+  readonly type = CompaniesActionTypes.AllCompaniesRequested;
+}
+
+export class AllCompaniesLoaded implements Action {
+  readonly type = CompaniesActionTypes.AllCompaniesLoaded;
+  constructor(public payload: { companies: Company[] }) {}
+}
+
+export class AllCompaniesLoadFailed implements Action {
+  readonly type = CompaniesActionTypes.AllCompaniesLoadFailed;
 }
 
 export type CompaniesActions =
   CompanyRequested |
   CompanyLoaded |
-  CompanyLoadFailed;
+  CompanyLoadFailed |
+  AllCompaniesRequested |
+  AllCompaniesLoaded |
+  AllCompaniesLoadFailed;

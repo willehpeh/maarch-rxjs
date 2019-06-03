@@ -1,17 +1,40 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { CompaniesActionTypes, CompanyLoaded, CompanyLoadFailed, CompanyRequested } from './companies.actions';
-import { catchError, map, mergeMap, tap } from 'rxjs/operators';
+import {
+  AllCompaniesLoaded,
+  AllCompaniesLoadFailed,
+  AllCompaniesRequested,
+  CompaniesActionTypes,
+  CompanyLoaded,
+  CompanyLoadFailed,
+  CompanyRequested
+} from './companies.actions';
+import { catchError, exhaustMap, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
 import { CompaniesService } from './companies.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../reducers';
-import { EMPTY } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
+import { allCoursesLoaded } from './companies.selectors';
 
 
 
 @Injectable()
 export class CompaniesEffects {
+
+  @Effect()
+  loadAllCompanies$ = this.actions$.pipe(
+    ofType<AllCompaniesRequested>(CompaniesActionTypes.AllCompaniesRequested),
+    withLatestFrom(this.store.select(allCoursesLoaded)),
+    filter(([action, loaded]) => !loaded),
+    exhaustMap(() => this.companies.getAllCompanies().pipe(
+      catchError(err => {
+        this.store.dispatch(new AllCompaniesLoadFailed());
+        return of([]);
+      })
+    )),
+    map(companies => new AllCompaniesLoaded({companies}))
+  );
 
   @Effect()
   loadCompany$ = this.actions$.pipe(
