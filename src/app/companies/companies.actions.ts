@@ -1,14 +1,21 @@
 import { Action } from '@ngrx/store';
+import { Company } from './models/Company';
 
 export enum CompaniesActionTypes {
-  LoadCompanies = '[Companies] Load Companies',
-
-
+  CompanyRequested = '[Company List Page] Company Requested',
+  CompanyLoaded = '[Companies API] Company Loaded'
 }
 
-export class LoadCompanies implements Action {
-  readonly type = CompaniesActionTypes.LoadCompanies;
+export class CompanyRequested implements Action {
+  readonly type = CompaniesActionTypes.CompanyRequested;
+  constructor(public payload: {companyId: string}) {}
 }
 
+export class CompanyLoaded implements Action {
+  readonly type = CompaniesActionTypes.CompanyLoaded;
+  constructor(public payload: {company: Company}) {}
+}
 
-export type CompaniesActions = LoadCompanies;
+export type CompaniesActions =
+  CompanyRequested |
+  CompanyLoaded;
