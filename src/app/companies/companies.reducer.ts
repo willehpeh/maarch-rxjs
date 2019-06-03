@@ -1,18 +1,15 @@
-import { Action } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Company } from './models/Company';
+import { CompaniesActions, CompaniesActionTypes } from './companies.actions';
 
-export interface CompaniesState extends EntityState<Company> {
-
-}
+export interface CompaniesState extends EntityState<Company> {}
 
 export const adapter: EntityAdapter<Company> = createEntityAdapter<Company>();
 
-const initialState = adapter.getInitialState();
-
-export function reducer(state = initialState, action: Action): CompaniesState {
+export function reducer(state = adapter.getInitialState(), action: CompaniesActions): CompaniesState {
   switch (action.type) {
-
+    case CompaniesActionTypes.CompanyLoaded:
+      return adapter.addOne(action.payload.company, state);
     default:
       return state;
   }

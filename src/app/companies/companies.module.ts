@@ -8,6 +8,8 @@ import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import * as fromCompanies from './companies.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { CompaniesEffects } from './companies.effects';
 
 @NgModule({
   declarations: [CompaniesListComponent, CompanyViewComponent],
@@ -17,7 +19,8 @@ import * as fromCompanies from './companies.reducer';
     MaterialModule,
     SharedModule,
     ReactiveFormsModule,
-    StoreModule.forFeature('companies', fromCompanies.reducer)
+    StoreModule.forFeature('companies', fromCompanies.reducer),
+    EffectsModule.forFeature([CompaniesEffects])
   ]
 })
 export class CompaniesModule { }
