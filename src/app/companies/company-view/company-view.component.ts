@@ -3,10 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Company } from '../models/Company';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CompaniesService } from '../companies.service';
-import { exhaustMap, mergeMap, reduce, tap } from 'rxjs/operators';
+import { exhaustMap, filter, mergeMap, reduce, take, tap } from 'rxjs/operators';
 import { from, Observable, of } from 'rxjs';
 import { Person } from '../../people/models/Person';
-import { PeopleService } from '../../people/people.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../reducers';
+import { selectPersonById } from '../people.selectors';
+import { EmployeeRequested } from '../people.actions';
 
 
 @Component({
@@ -24,7 +27,7 @@ export class CompanyViewComponent implements OnInit {
               private formBuilder: FormBuilder,
               private companies: CompaniesService,
               private router: Router,
-              private people: PeopleService) { }
+              private store: Store<AppState>) { }
 
   ngOnInit() {
     this.company = this.route.snapshot.data.company;
@@ -34,9 +37,18 @@ export class CompanyViewComponent implements OnInit {
       companyType: [this.company.companyType, Validators.required],
       buzz: [this.company.buzz, Validators.required]
     });
+
     this.employees$ = from(this.company.employees).pipe(
-      mergeMap(employeeId => this.people.getPersonById(employeeId)),
-      reduce((acc, curr) => [...acc, curr], [])
+      mergeMap(id => this.store.select(selectPersonById(id)).pipe(
+        tap(employee => {
+          if (!employee) {
+            this.store.dispatch(new EmployeeRequested({ employeeId: id }));
+          }
+        })
+      )),
+      filter(person => !!person),
+      take(this.company.employees.length),
+      reduce((acc, curr) => [...acc, curr], []),
     );
   }
 
@@ -51,6 +63,9 @@ export class CompanyViewComponent implements OnInit {
   }
 
   onGoBack() {
+    if (this.companyForm.untouched) {
+      this.router.navigateByUrl('companies');
+    }
     this.companies.updateCompany(JSON.parse(localStorage.getItem('companyForm'))).pipe(
       tap(() => this.router.navigateByUrl('companies'))
     ).subscribe();
